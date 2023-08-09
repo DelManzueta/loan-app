@@ -1,3 +1,4 @@
-const validation = require('../middleware/validation');
-
-router.post('/', validation.validateLoan, loanController.createLoan);
+exports.errorHandler = (err, req, res, next) => {
+	console.error(err.stack);
+	res.status(500).json({ error: 'An unexpected error occurred' });
+};

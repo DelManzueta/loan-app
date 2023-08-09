@@ -5,7 +5,3 @@ exports.validateLoan = (req, res, next) => {
 	}
 	next();
 };
-
-const validation = require('../middleware/validation');
-
-router.post('/', validation.validateLoan, loanController.createLoan);
